@@ -1157,7 +1157,7 @@ class PHPExcel_Calculation_Engineering
             $x = floor($x);
         }
         $x = (string) $x;
-        if (strlen($x) > preg_match_all('/[01]/', $x, $out)) {
+        if (strlen($x) > preg_match_all('/[01]/', $x)) {
             return PHPExcel_Calculation_Functions::NaN();
         }
         if (strlen($x) > 10) {

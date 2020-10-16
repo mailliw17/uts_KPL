@@ -268,7 +268,7 @@ class PHPExcel_Reader_Excel5_Escher
         $rgbUid = substr($recordData, 2, 16);
 
         // offset: 18; size: 2; tag
-        $tag = PHPExcel_Reader_Excel5::getInt2d($recordData, 18);
+
 
         // offset: 20; size: 4; size of BLIP in bytes
         $size = PHPExcel_Reader_Excel5::getInt4d($recordData, 20);
@@ -280,16 +280,20 @@ class PHPExcel_Reader_Excel5_Escher
         $foDelay = PHPExcel_Reader_Excel5::getInt4d($recordData, 28);
 
         // offset: 32; size: 1; unused1
-        $unused1 = ord($recordData{32});
+        $unused1 = ord($recordData{
+            32});
 
         // offset: 33; size: 1; size of nameData in bytes (including null terminator)
-        $cbName = ord($recordData{33});
+        $cbName = ord($recordData{
+            33});
 
         // offset: 34; size: 1; unused2
-        $unused2 = ord($recordData{34});
+        $unused2 = ord($recordData{
+            34});
 
         // offset: 35; size: 1; unused3
-        $unused3 = ord($recordData{35});
+        $unused3 = ord($recordData{
+            35});
 
         // offset: 36; size: $cbName; nameData
         $nameData = substr($recordData, 36, $cbName);
@@ -321,7 +325,6 @@ class PHPExcel_Reader_Excel5_Escher
         $pos = 0;
 
         // offset: 0; size: 16; rgbUid1 (MD4 digest of)
-        $rgbUid1 = substr($recordData, 0, 16);
         $pos += 16;
 
         // offset: 16; size: 16; rgbUid2 (MD4 digest), only if $recInstance = 0x46B or 0x6E3
@@ -331,7 +334,8 @@ class PHPExcel_Reader_Excel5_Escher
         }
 
         // offset: var; size: 1; tag
-        $tag = ord($recordData{$pos});
+        $tag = ord($recordData{
+            $pos});
         $pos += 1;
 
         // offset: var; size: var; the raw image data
@@ -372,7 +376,8 @@ class PHPExcel_Reader_Excel5_Escher
         }
 
         // offset: var; size: 1; tag
-        $tag = ord($recordData{$pos});
+        $tag = ord($recordData{
+            $pos});
         $pos += 1;
 
         // offset: var; size: var; the raw image data
@@ -411,7 +416,7 @@ class PHPExcel_Reader_Excel5_Escher
         // offset: 0; size: 2; recVer and recInstance
 
         // bit: 4-15; mask: 0xFFF0; recInstance
-        $recInstance = (0xFFF0 & PHPExcel_Reader_Excel5::getInt2d($this->data, $this->pos)) >> 4;
+
 
         $length = PHPExcel_Reader_Excel5::getInt4d($this->data, $this->pos + 4);
         $recordData = substr($this->data, $this->pos + 8, $length);
