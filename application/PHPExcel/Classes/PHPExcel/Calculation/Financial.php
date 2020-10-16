@@ -1125,7 +1125,7 @@ class PHPExcel_Calculation_Financial
         $fraction        = (int)PHPExcel_Calculation_Functions::flattenSingleValue($fraction);
 
         // Validate parameters
-        if (is_null($decimal_dollar) || $fraction < 0) {
+        if ($decimal_dollar===null) || $fraction < 0) {
             return PHPExcel_Calculation_Functions::NaN();
         }
         if ($fraction == 0) {
