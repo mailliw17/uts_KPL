@@ -68,3 +68,8 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+
+.. image:: https://api.codacy.com/project/badge/Grade/db1bad198ef146ff8ae50f25b8c38078
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/gh/mailliw17/uts_KPL?utm_source=github.com&utm_medium=referral&utm_content=mailliw17/uts_KPL&utm_campaign=Badge_Grade
