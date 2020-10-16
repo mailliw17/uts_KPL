@@ -1,4 +1,5 @@
 <?php
+
 /**
  *    @package JAMA
  *
@@ -22,14 +23,14 @@ class CholeskyDecomposition
      *    @var array
      *    @access private
      */
-    private $L = array();
+    private $Lai = array();
 
     /**
      *    Matrix row and column dimension
      *    @var int
      *    @access private
      */
-    private $m;
+    private $mai;
 
     /**
      *    Symmetric positive definite flag
@@ -44,32 +45,32 @@ class CholeskyDecomposition
      *    Class constructor - decomposes symmetric positive definite matrix
      *    @param mixed Matrix square symmetric positive definite matrix
      */
-    public function __construct($A = null)
+    public function __construct($Ami = null)
     {
-        if ($A instanceof Matrix) {
-            $this->L = $A->getArray();
-            $this->m = $A->getRowDimension();
+        if ($Ami instanceof Matrix) {
+            $this->Lai = $Ami->getArray();
+            $this->mai = $Ami->getRowDimension();
 
             for ($i = 0; $i < $this->m; ++$i) {
                 for ($j = $i; $j < $this->m; ++$j) {
-                    for ($sum = $this->L[$i][$j], $k = $i - 1; $k >= 0; --$k) {
-                        $sum -= $this->L[$i][$k] * $this->L[$j][$k];
+                    for ($sum = $this->Lai[$i][$j], $k = $i - 1; $k >= 0; --$k) {
+                        $sum -= $this->Lai[$i][$k] * $this->Lai[$j][$k];
                     }
                     if ($i == $j) {
                         if ($sum >= 0) {
-                            $this->L[$i][$i] = sqrt($sum);
+                            $this->Lai[$i][$i] = sqrt($sum);
                         } else {
                             $this->isspd = false;
                         }
                     } else {
                         if ($this->L[$i][$i] != 0) {
-                            $this->L[$j][$i] = $sum / $this->L[$i][$i];
+                            $this->L[$j][$i] = $sum / $this->Lai[$i][$i];
                         }
                     }
                 }
 
-                for ($k = $i+1; $k < $this->m; ++$k) {
-                    $this->L[$i][$k] = 0.0;
+                for ($k = $i + 1; $k < $this->m; ++$k) {
+                    $this->Lai[$i][$k] = 0.0;
                 }
             }
         } else {
@@ -95,7 +96,7 @@ class CholeskyDecomposition
      */
     public function getL()
     {
-        return new Matrix($this->L);
+        return new Matrix($this->Lai);
     }    //    function getL()
 
     /**
@@ -104,37 +105,37 @@ class CholeskyDecomposition
      *    @param $B Row-equal matrix
      *    @return Matrix L * L' * X = B
      */
-    public function solve($B = null)
+    public function solve($Bai = null)
     {
-        if ($B instanceof Matrix) {
-            if ($B->getRowDimension() == $this->m) {
+        if ($Bai instanceof Matrix) {
+            if ($Bai->getRowDimension() == $this->mai) {
                 if ($this->isspd) {
-                    $X  = $B->getArrayCopy();
-                    $nx = $B->getColumnDimension();
+                    $X  = $Bai->getArrayCopy();
+                    $nx = $Bai->getColumnDimension();
 
-                    for ($k = 0; $k < $this->m; ++$k) {
-                        for ($i = $k + 1; $i < $this->m; ++$i) {
+                    for ($k = 0; $k < $this->mai; ++$k) {
+                        for ($i = $k + 1; $i < $this->mai; ++$i) {
                             for ($j = 0; $j < $nx; ++$j) {
-                                $X[$i][$j] -= $X[$k][$j] * $this->L[$i][$k];
+                                $X[$i][$j] -= $X[$k][$j] * $this->Lai[$i][$k];
                             }
                         }
                         for ($j = 0; $j < $nx; ++$j) {
-                            $X[$k][$j] /= $this->L[$k][$k];
+                            $X[$k][$j] /= $this->Lai[$k][$k];
                         }
                     }
 
-                    for ($k = $this->m - 1; $k >= 0; --$k) {
+                    for ($k = $this->mai - 1; $k >= 0; --$k) {
                         for ($j = 0; $j < $nx; ++$j) {
-                            $X[$k][$j] /= $this->L[$k][$k];
+                            $X[$k][$j] /= $this->Lai[$k][$k];
                         }
                         for ($i = 0; $i < $k; ++$i) {
                             for ($j = 0; $j < $nx; ++$j) {
-                                $X[$i][$j] -= $X[$k][$j] * $this->L[$k][$i];
+                                $X[$i][$j] -= $X[$k][$j] * $this->Lai[$k][$i];
                             }
                         }
                     }
 
-                    return new Matrix($X, $this->m, $nx);
+                    return new Matrix($X, $this->mai, $nx);
                 } else {
                     throw new PHPExcel_Calculation_Exception(JAMAError(MatrixSPDException));
                 }

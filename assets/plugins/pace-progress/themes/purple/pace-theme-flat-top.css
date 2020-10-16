@@ -18,7 +18,7 @@
 
   -webkit-transition: -webkit-transform .5s ease-out;
   -ms-transition: -webkit-transform .5s ease-out;
-  transition: transform .5s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .pace.pace-active {
