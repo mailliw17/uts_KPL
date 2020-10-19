@@ -25,14 +25,14 @@
 </script> -->
 
 <!-- jQuery -->
-<script src="<?= base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     // $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="<?= base_url() ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
 <!-- <script src="<?= base_url() ?>assets/plugins/chart.js/Chart.min.js"></script> -->
 
@@ -64,7 +64,7 @@
 
 <!-- Template tabel  -->
 <!-- Core plugin JavaScript-->
-<script src="<?= base_url() ?>assets/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url() ?>assets/js/sb-admin-2.min.js"></script>

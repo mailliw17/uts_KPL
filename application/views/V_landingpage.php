@@ -16,7 +16,7 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet"> -->
 
     <!-- Bootstrap CSS File -->
-    <link href="<?= base_url() ?>assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Libraries CSS Files -->
 
@@ -122,9 +122,9 @@
     <!-- PWA -->
     <script src="<?= base_url() ?>script.js">
     </script>
-    <script src="<?= base_url() ?>assets/lib/jquery/jquery.min.js"></script>
-    <script src="<?= base_url() ?>assets/lib/jquery/jquery-migrate.min.js"></script>
-    <script src="<?= base_url() ?>assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/jquery/jquery-migrate.min.js"></script>
+    <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url() ?>assets/lib/easing/easing.min.js"></script>
     <script src="<?= base_url() ?>assets/lib/wow/wow.min.js"></script>
     <script src="<?= base_url() ?>assets/lib/waypoints/waypoints.min.js"></script>
