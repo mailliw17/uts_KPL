@@ -23,34 +23,8 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
 
-<!-- Ionicons -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/css/ionicons.min.css"> -->
-
-<!-- Tempusdominus Bbootstrap 4 -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> -->
-<!-- iCheck -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css"> -->
-<!-- JQVMap -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/jqvmap/jqvmap.min.css"> -->
-<!-- Theme style -->
 <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/adminlte.min.css">
-<!-- overlayScrollbars -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> -->
-<!-- summernote -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/summernote/summernote-bs4.css"> -->
 
-<!-- Datepicker -->
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap-datepicker3.css"> -->
-
-<!-- <link rel="stylesheet" href="<?= base_url() ?>assets/MDB-Free">  -->
-
-<!-- Custom styles for this page -->
-<!-- <link href="<?= base_url() ?>assets/css/datatables/dataTables.bootstrap4.css" rel="stylesheet"> -->
-<!-- <link href="<?= base_url() ?>assets/css/sb-admin-2.css" rel="stylesheet"> -->
-
-
-<!-- Google Font: Source Sans Pro -->
-<!-- <link href="<?= base_url() ?>assets/googlefont/googlefont.css" rel="stylesheet"> -->
 </link>
 
 
