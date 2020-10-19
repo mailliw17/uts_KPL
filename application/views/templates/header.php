@@ -70,9 +70,6 @@
                     <a href="<?= base_url('C_Truk/tracking'); ?>" class="nav-link"> <i class="fas fa-home"></i> Sistem Pemantauan Truk SBM dan Langsir</a>
                 </li>
                 <li>
-
-
-
                     <!-- TOMBOL INI GESER KE KANAN YA -->
                     <div class="float-right">
                         <a onclick="javacript:return confirm('Anda yakin logout?')" href="<?= base_url('C_auth/logout') ?>">
